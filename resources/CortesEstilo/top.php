@@ -7,19 +7,18 @@
     <title>Encurta 3e</title>
 
     <link
-      href="./css/bootstrap.css"
+      href="css/bootstrap.css"
       rel="stylesheet"
     />
+
     <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
     />
     
     <script src="https://kit.fontawesome.com/325333b979.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="css/style.css" />
-    <link
-      href="css/navbarStyle.css"
-      rel="stylesheet"
-    />
+    <link href="css/navbarStyle.css" rel="stylesheet"/>
   </head>
   <body>
