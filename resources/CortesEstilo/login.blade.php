@@ -1,7 +1,6 @@
-<?php
-  include("top.php");
-  include("navBar.php");
-?>
+
+  @include("top.php");
+  @include("navBar.php");
 
 <div class="container-fluid content">
 
@@ -63,6 +62,5 @@
     </table> -->
   </div>
 </div>
-<?php
-  include("bottom.php");
-?>
+
+  @include("bottom.php");
