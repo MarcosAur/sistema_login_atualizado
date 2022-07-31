@@ -16,9 +16,9 @@
     />
     
     <script src="https://kit.fontawesome.com/325333b979.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./myCSS/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link
-      href="./myCSS/navbarStyle.css"
+      href="css/navbarStyle.css"
       rel="stylesheet"
     />
   </head>

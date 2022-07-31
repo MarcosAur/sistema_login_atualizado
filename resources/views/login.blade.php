@@ -1,6 +1,6 @@
 
-  @include("top");
-  @include("navBar");
+  @include("top")
+  @include("navBar")
 
 
 <div class="container-fluid content">
@@ -64,4 +64,4 @@
   </div>
 </div>
 
-  @include("bottom");
+  @include("bottom")

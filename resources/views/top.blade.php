@@ -13,8 +13,8 @@
     />
     
     <script src="https://kit.fontawesome.com/325333b979.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../myCSS/style.css" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('/resources/CortesEstilo/myCSS/navbarStyle.css') }}" >
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/navbarStyle.css">
 
   </head>
   <body>
