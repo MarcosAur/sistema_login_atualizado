@@ -16,11 +16,14 @@ use App\Http\Controllers\CadastroController;
 */
 
 Route::get('/', function () {
-    //se tiver logado como admin, vai pra tela de crud
-    //se tiver logado como Usuário Comum, vai pra tela com os próprios links
-    //se tiver logado como Usuário Observador, vai pra tela de ver todos os links (sem poder editar)
-    //se não tiver logado, tela de registrar link normal.
-    return redirect("login");
+    $nivelAcesso = session()->get("nivelAcesso");
+    if($nivelAcesso == ""){
+        //se não tiver logado, tela de registrar link normal.
+        session(['curTab' => "inicio"]);
+        return redirect("/novoLink");
+    }
+    //se tiver logado redireciona pra a lista de links
+    return redirect("links.show");// TODO passar todos os links
 })->name("inicio");
 
 Route::get('/welcome', function () {
