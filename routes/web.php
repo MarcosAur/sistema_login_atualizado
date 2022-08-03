@@ -16,6 +16,9 @@ use App\Http\Controllers\CadastroController;
 */
 
 Route::get('/', function () {
+    //se tiver logado como admin, vai pra tela de crud
+    //se tiver logado como Usuário Comum, vai pra tela com os próprios links
+    //se tiver logado como Usuário Observador, vai pra tela de ver todos os links (sem poder editar)
     return redirect("login");
 });
 
