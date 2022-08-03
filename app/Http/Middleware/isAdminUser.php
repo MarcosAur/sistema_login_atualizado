@@ -19,6 +19,6 @@ class isAdminUser
         if(session()->get("nivelAcesso") == "Admin"){
             return $next($request);
         }
-        return redirect("inicio");
+        return redirect()->route("inicio");
     }
 }

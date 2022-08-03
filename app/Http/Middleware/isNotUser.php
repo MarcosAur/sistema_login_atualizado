@@ -17,7 +17,7 @@ class isNotUser
     public function handle(Request $request, Closure $next)
     {
         if(session()->has('nivelAcesso')){
-            return redirect("inicio");
+            return redirect()->route("inicio");
         }
         return $next($request);
     }

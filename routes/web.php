@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LinksController;
 use App\Http\Controllers\CadastroController;
 
 /*
@@ -15,24 +16,9 @@ use App\Http\Controllers\CadastroController;
 |
 */
 
-Route::get('/', function () {
-    $nivelAcesso = session()->get("nivelAcesso");
-    if($nivelAcesso == ""){
-        //se não tiver logado, tela de registrar link normal.
-        session(['curTab' => "inicio"]);
-        return redirect("/novoLink");
-    }
-    //se tiver logado redireciona pra a lista de links
-    return redirect("links.show");// TODO passar todos os links
-})->name("inicio");
-
 Route::get('/welcome', function () {
     return view('welcome');
 });
-
-Route::get('/novoLink', function () {
-    return view('links.create');
-})->name("novoLink");
 
 Route::get('/deslogar', function () {
     session()->forget('userId');
@@ -40,11 +26,12 @@ Route::get('/deslogar', function () {
     return redirect('/');
 })->name("deslogar");
 
-Route::get('/login', [LoginController::class,'index'])->name("login");
+Route::get('/login', [LoginController::class,'index'])->name("login")->middleware("isNotUser");
 
-Route::post('/login', [LoginController::class,'logar'])->name("validarLogin");
+Route::post('/login', [LoginController::class,'logar'])->name("validarLogin")->middleware("isNotUser");
 
-Route::get('/cadastro',[CadastroController::class,'index'])->name("cadastro");
+Route::get('/cadastro',[CadastroController::class,'index'])->name("cadastro")->middleware("isAdminUser");;
 
 Route::post('/cadastro',[CadastroController::class,'cadastrar'])->name("efetuarCadastro");
 
+Route::resource('links', LinksController::class);
