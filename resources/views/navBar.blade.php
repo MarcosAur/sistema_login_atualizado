@@ -1,13 +1,11 @@
 @php
   $nivelAcesso = session()->get("nivelAcesso");
   $userId = session()->get("userId");
-
-  $curTab = session()->get("curTab");
 @endphp
 <nav class="navbar navbar-expand-lg bg-light navBar">
       <div class="container-fluid navBar">
         <a class="logo-link navbar-brand" href="#"
-          ><img class="logo m-3" src="./imgs/logo3e.png" alt="Logo 3e" />
+          ><img class="logo m-3" src="../imgs/logo3e.png" alt="Logo 3e" />
         </a>
         <button
         class="navbar-toggler"
@@ -25,7 +23,7 @@
           <!-- colocar a classe active no nav-item que for referente a pagina atual 
           Lembrar de tirar a barra tambem-->
           <li class="nav-item {{($curTab == 'inicio') ? 'active' : ''}}">
-            <a class="nav-link d-inline growHover" href="{{route('inicio')}}"
+            <a class="nav-link d-inline growHover" href="{{route('links.index')}}"
             ><i class="bi bi-house-fill d-inline pr-2"></i>Início {{$userId}}</a
             >
           </li>
@@ -49,7 +47,7 @@
             <div class="barra"></div>
 
             <li class="nav-item {{($curTab == 'deslogar') ? 'active' : ''}}">
-              <a class="nav-link d-inline growHover" href="{{route('deslogar')}}"
+              <a class="nav-link d-inline growHover" href="/deslogar"
                 ><i class="fas fa-sign-out-alt"></i>Deslogar</a
               >
             </li>
@@ -61,7 +59,7 @@
             <div class="barra"></div>
             
             <li class="nav-item {{($curTab == 'novoLink') ? 'active' : ''}}">
-              <a class="nav-link d-inline growHover" href="{{route('novoLink')}}"
+              <a class="nav-link d-inline growHover" href="{{route('links.create')}}"
               ><i class="fas fa-link"></i>Novo Link</a
               >
             </li>

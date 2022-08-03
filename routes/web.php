@@ -19,11 +19,14 @@ use App\Http\Controllers\CadastroController;
 Route::get('/welcome', function () {
     return view('welcome');
 });
+Route::get('/', function () {
+    return redirect()->route('links.index');
+});
 
 Route::get('/deslogar', function () {
     session()->forget('userId');
     session()->forget('nivelAcesso');
-    return redirect('/');
+    return redirect('/login');
 })->name("deslogar");
 
 Route::get('/login', [LoginController::class,'index'])->name("login")->middleware("isNotUser");

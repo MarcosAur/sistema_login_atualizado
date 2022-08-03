@@ -8,8 +8,7 @@ use App\Providers\GerenciarUsuarioService;
 class LoginController extends Controller
 {
     function index(){
-        session(['curTab' => "logar"]);
-        return view("login");
+        return view("login")->with("curTab", "logar");
     }
 
     function logar(){
@@ -17,11 +16,11 @@ class LoginController extends Controller
         $senha = $_POST['senha'];
         $statusLogin = GerenciarUsuarioService::validarLogin($email, $senha);
 
+        //TODO validação
         if ($statusLogin[0]) {
-            setcookie('username',$statusLogin[1],time() + 84600 , '/');
             session(['userId' => $statusLogin[2]]);
             session(['nivelAcesso' => $statusLogin[3]]);
-            return redirect('/welcome');
+            return redirect()->route('links.index');
         }else{
             setcookie('error',"Usuario ou senha incorretas",time() + 10 , '/');
             return redirect('/login');

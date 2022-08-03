@@ -13,7 +13,12 @@ class linksController extends Controller
      */
     public function index()
     {
-        return view('links.index');
+        //se tiver logado vai pro mostrar links
+        if(session()->has('userId')){
+            return view('links.index')->with("curTab", "inicio");;
+        }
+        //se não tiver vai pro forms de criar link
+        return redirect()->route('links.create');
     }
 
     /**
@@ -22,8 +27,18 @@ class linksController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    {   
+        //se tiver logado como comum o create é "Novo Link"
+        if(session()->get("nivelAcesso") == "Comum"){
+            return view('links.create')->with("curTab", "novoLink");
+        }
+        //se tiver deslogado o create é "Início"
+        if(!session()->has('userId')){
+            return view('links.create')->with("curTab", "inicio");
+        }
+        //se for qualquer outro tipo de usuário, não tem acesso ao create de links
+        //TODO mostrar erro de sem acesso a rota
+        return redirect("/welcome");
     }
 
     /**
