@@ -8,7 +8,7 @@ use App\Providers\GerenciarUsuarioService;
 class LoginController extends Controller
 {
     function index(){
-        session(['curTab' => "login"]);
+        session(['curTab' => "logar"]);
         return view("login");
     }
 
