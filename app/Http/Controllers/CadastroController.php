@@ -8,15 +8,16 @@ use App\Providers\GerenciarUsuarioService;
 class CadastroController extends Controller
 {
     public function index(){
-        return view('cadastro');
+        return view('users.create');
     }
 
     public function cadastrar(){
         $nome = $_POST['nome'];
         $email = $_POST['email'];
         $senha = $_POST['senha'];
+        $nivelAcesso = $_POST['nivelAcesso'];
         
-        $statusDoCadastro = GerenciarUsuarioService::cadastrarUsuario($nome, $email, $senha);
+        $statusDoCadastro = GerenciarUsuarioService::cadastrarUsuario($nome, $email, $senha, $nivelAcesso);
 
         if($statusDoCadastro[0]) {
             setcookie('username',$nome,time() + 84600 , '/');

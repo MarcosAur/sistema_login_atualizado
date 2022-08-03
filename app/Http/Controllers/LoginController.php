@@ -18,6 +18,8 @@ class LoginController extends Controller
 
         if ($statusLogin[0]) {
             setcookie('username',$statusLogin[1],time() + 84600 , '/');
+            session(['userId' => $statusLogin[2]]);
+            session(['nivelAcesso' => $statusLogin[3]]);
             return redirect('/welcome');
         }else{
             setcookie('error',"Usuario ou senha incorretas",time() + 10 , '/');

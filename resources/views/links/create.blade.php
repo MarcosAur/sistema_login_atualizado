@@ -4,11 +4,11 @@
 <div class="container-fluid content">
 
   <!-- BreadCrumb -->
-  <div class="breadCrumbHolder my-4">
-    <a class="d-inline">Deslogado</a>
-    <a class="d-inline"><i class="fas fa-angle-right"></i>Início</a>
-    <a class="d-inline"><i class="fas fa-angle-right"></i>Novo Link</a>
-  </div>
+  {{-- @if(deslogado) --}}
+    @include("breadCrumb", ["paths" => ["Deslogado", "Início"]])
+    {{-- @elseif(usuário) --}}
+    {{-- @include("breadCrumb", ["paths" => ["Usuário", "Novo Link"]]) --}}
+
   <!-- Content -->
   <div class="card shadow p-3 m-1 pt-4 bg-body rounded-lg border-0 d-inline">
     

@@ -1,3 +1,7 @@
+@php
+  $nivelAcesso = session()->get("nivelAcesso");
+  $userId = session()->get("userId");
+@endphp
 <nav class="navbar navbar-expand-lg bg-light navBar">
       <div class="container-fluid navBar">
         <a class="logo-link navbar-brand" href="#"
@@ -19,8 +23,8 @@
           <!-- colocar a classe active no nav-item que for referente a pagina atual 
           Lembrar de tirar a barra tambem-->
           <li class="nav-item">
-            <a class="nav-link d-inline growHover" href="/"
-            ><i class="bi bi-house-fill d-inline pr-2"></i>Início</a
+            <a class="nav-link d-inline growHover" href="{{route('inicio')}}"
+            ><i class="bi bi-house-fill d-inline pr-2"></i>Início {{$userId}}</a
             >
           </li>
           
@@ -31,18 +35,28 @@
             ><i class="bi bi-person-fill"></i>Perfil</a
             >
           </li> -->
+          @if(!isset($userId))
+            <div class="barra"></div>
 
-          <div class="barra"></div>
+            <li class="nav-item">
+              <a class="nav-link d-inline growHover" href="/login"
+              ><i class="fas fa-sign-in-alt"></i>Logar</a
+              >
+            </li>    
+          @else
+            <div class="barra"></div>
 
-          <li class="nav-item">
-            <a class="nav-link d-inline growHover" href="/login"
-            ><i class="fas fa-sign-in-alt"></i>Logar</a
-            >
-          </li>
+            <li class="nav-item">
+              <a class="nav-link d-inline growHover" href="{{route('deslogar')}}"
+                ><i class="fas fa-sign-out-alt"></i>Deslogar</a
+              >
+            </li>
+          @endif
+          
           
 
           
-          <!-- <div class="barra"></div>
+          {{-- <div class="barra"></div>
           
           <li class="nav-item">
             <a class="nav-link d-inline growHover" href="#"
@@ -60,12 +74,6 @@
           </li>
           
           <div class="barra"></div>
-          
-          <li class="nav-item">
-            <a class="nav-link d-inline growHover" href="#"
-              ><i class="fas fa-sign-out-alt"></i>Deslogar</a
-            >
-          </li>
 
           <div class="barra"></div>
           
@@ -81,8 +89,7 @@
             <a class="nav-link d-inline growHover" href="#"
               ><i class="fas fa-users"></i>Usuários</a
             >
-          </li>
-           -->
+          </li> --}}
           </ul>
         </div>
       </div>

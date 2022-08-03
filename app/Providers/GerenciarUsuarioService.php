@@ -26,17 +26,22 @@ class GerenciarUsuarioService extends ServiceProvider
 
         //To-Do: verificar se o array é vazio
         if(count($usuario) != 0){
-            return [true,$usuario[0]->nome];
+            return [true,$usuario[0]->nome, $usuario[0]->id, $usuario[0]->nivelAcesso];
         }else{
             return [false, "Não de certo"];
         }
     }
 
-    public static function cadastrarUsuario($nome, $email, $senha){
+    public static function cadastrarUsuario($nome, $email, $senha, $nivelAcesso){
         $usuario = new \App\Models\Usuario();
         $usuario->nome = $nome;
         $usuario->email = $email;
         $usuario->senha = $senha;
+        $usuario->nivelAcesso = $nivelAcesso;
+        
+        if($nivelAcesso!="Admin" && $nivelAcesso!="Observador"){
+            $usuario->nivelAcesso = "Comum";   
+        }
 
         $usuarioJaCadastrado = Usuario::where("email",$email)->get();
 
