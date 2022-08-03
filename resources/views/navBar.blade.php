@@ -19,7 +19,7 @@
           <!-- colocar a classe active no nav-item que for referente a pagina atual 
           Lembrar de tirar a barra tambem-->
           <li class="nav-item">
-            <a class="nav-link d-inline growHover" href="#"
+            <a class="nav-link d-inline growHover" href="/"
             ><i class="bi bi-house-fill d-inline pr-2"></i>Início</a
             >
           </li>
@@ -35,7 +35,7 @@
           <div class="barra"></div>
 
           <li class="nav-item">
-            <a class="nav-link d-inline growHover" href="#"
+            <a class="nav-link d-inline growHover" href="/login"
             ><i class="fas fa-sign-in-alt"></i>Logar</a
             >
           </li>

@@ -11,6 +11,7 @@
         <h1>Bem vindo, <?php 
             if (isset($_COOKIE['username'])){
                 echo $_COOKIE['username'];
+                echo  session()->get("userId");
             }else{
                 echo "Faça login para aproveitar todas as funcionalidades do site";
             }
