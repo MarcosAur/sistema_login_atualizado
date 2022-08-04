@@ -12,13 +12,13 @@
 
   <!-- Content -->
   <div class="card shadow p-3 m-1 pt-4 bg-body rounded-lg border-0 d-inline">
-    
+    <p>{{$link->linkOriginal}}</p>
     <div class="d-flex flex-column">
       <h4 class="text-center w-100">Editar Link</h4>
        <form class="m-auto">
 
         <label for="link">Link:</label>
-        <input type="text" class="textInput my-2" name="link" placeholder="https://site.3esolucoes.com.br/" />
+        <input type="text" class="textInput my-2" name="link" value="{{$link->linkOriginal}}" />
         
         <label for="link">Selecione um Projeto</label>
         <select class="textInput form-select form-select-lg mb-3" aria-label=".form-select-lg example">

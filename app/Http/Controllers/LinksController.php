@@ -18,7 +18,7 @@ class linksController extends Controller
         if(session()->has('userId')){
             $links;
             if(session()->get("nivelAcesso") == "Comum"){
-                // $flights = Flight::where('criador_id', '')->get();
+                $links = links::where("criador_id", session()->get("userId"));
             }else{
                 $links = links::all();
             }
@@ -90,8 +90,9 @@ class linksController extends Controller
     public function edit($id)
     {
         //TODO pegar o link pelo id
+        $curLink = links::where("id", $id)->first();
         //passar pra view
-        return view("links.edit");
+        return view("links.edit", ["link" => $curLink]);
     }
 
     /**

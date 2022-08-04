@@ -56,7 +56,7 @@
           <button class="btn-primary d-inline float-end h5" type="button" data-bs-toggle="collapse" data-bs-target="#filter" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-sort-amount-down fa-xs"></i>Filtrar</button>
         @endif
       </h4>
-
+      @if(isset($links))
       <!-- filtro -->
       <div class="collapse" id="filter">
         <form class="card card-body m-auto filterCard">
@@ -139,6 +139,9 @@
           @endforeach
         </tbody>
       </table>
+      @else
+        @include('warning', ["msg"=> "Nenhum link encontrado!"])
+      @endif
 
       <div class="pagination">
         <a href="#"><i class="fas fa-caret-left"></i></a>
