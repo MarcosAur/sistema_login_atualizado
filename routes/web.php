@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LinksController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\CadastroController;
 
 /*
@@ -39,3 +40,4 @@ Route::get('/cadastro',[CadastroController::class,'index'])->name("cadastro");
 Route::post('/cadastro',[CadastroController::class,'cadastrar'])->name("efetuarCadastro");
 
 Route::resource('links', LinksController::class);
+Route::resource('project', ProjectController::class);

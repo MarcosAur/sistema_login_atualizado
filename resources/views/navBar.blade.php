@@ -83,7 +83,7 @@
             <div class="barra"></div>
             
             <li class="nav-item {{($curTab == 'projetos') ? 'active' : ''}}">
-              <a class="nav-link d-inline growHover" href="#"
+              <a class="nav-link d-inline growHover" href="{{route('project.index')}}"
                 ><i class="fas fa-folder"></i>Projetos</a
               >
             </li>
