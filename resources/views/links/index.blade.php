@@ -6,10 +6,7 @@
 <div class="container-fluid content">
 
   <!-- BreadCrumb -->
-  <div class="breadCrumbHolder my-4">
-    <a class="d-inline">Admin</a>
-    <a class="d-inline"><i class="fas fa-angle-right"></i>Início</a>
-  </div>
+  @include("breadCrumb", ["paths" => ["Deslogado", "Início"]])
 
 
 
@@ -55,8 +52,10 @@
   <div class="card shadow p-3 m-1 pt-4 bg-body rounded-lg border-0 d-inline">
     
     <div class="d-flex flex-column">
-      <h4 class="text-center w-100">Todos os Links
-        <button class="btn-primary d-inline float-end h5" type="button" data-bs-toggle="collapse" data-bs-target="#filter" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-sort-amount-down fa-xs"></i>Filtrar</button>
+      <h4 class="text-center w-100">{{(session()->get("nivelAcesso") == "Admin" || session()->get("nivelAcesso") == "Observador") ? 'Todos os Links' : 'Seus Links'}}
+        @if(session()->get("nivelAcesso") == "Admin" || session()->get("nivelAcesso") == "Observador")
+          <button class="btn-primary d-inline float-end h5" type="button" data-bs-toggle="collapse" data-bs-target="#filter" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-sort-amount-down fa-xs"></i>Filtrar</button>
+        @endif
       </h4>
 
       <!-- filtro -->
