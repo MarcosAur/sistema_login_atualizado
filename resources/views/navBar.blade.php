@@ -8,7 +8,7 @@
 <nav class="navbar navbar-expand-lg bg-light navBar">
       <div class="container-fluid navBar">
         <a class="logo-link navbar-brand" href="#"
-          ><img class="logo m-3" src="../imgs/logo3e.png" alt="Logo 3e" />
+          ><img class="logo m-3" src="{{asset('../imgs/logo3e.png')}}" alt="Logo 3e" />
         </a>
         <button
         class="navbar-toggler"

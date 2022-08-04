@@ -19,6 +19,6 @@ class isObserverUser
         if(session()->get("nivelAcesso") == "Observador"){
             return $next($request);
         }
-        return redirect("inicio");
+        return redirect("/");
     }
 }

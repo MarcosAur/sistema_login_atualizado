@@ -19,6 +19,6 @@ class isCommonUser
         if(session()->get("nivelAcesso") == "Comum"){
             return $next($request);
         }
-        return redirect("inicio");
+        return redirect("/");
     }
 }

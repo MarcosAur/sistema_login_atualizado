@@ -1,4 +1,3 @@
-
 @include("top")
 @include("navBar")
 
@@ -32,13 +31,13 @@
         </div>
         <div class="modal-body">
           <p>Projeto:</p>
-          <p class="textInput">Projeto tal</p>
+          <p class="textInput" id="projectModalDisplay">Projeto tal</p>
           <p>Criador:</p>
-          <p class="textInput">Nome do criador</p>
+          <p class="textInput" id="criadorModalDisplay">Nome do criador</p>
           <p>Link Original:</p>
-          <p class="textInput">www.something.com.br</p>
+          <p class="textInput" id="linkModalDisplay">www.something.com.br</p>
           <p>Link Encurtado:</p>
-          <p class="textInput">www.3e.com.br/HASHSH/user</p>
+          <p class="textInput" id="shortLinkModalDisplay">www.3e.com.br/HASHSH/user</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -94,26 +93,50 @@
           </tr>
         </thead>
         <tbody>
+          @foreach ($links as $link)
           <tr>
-            <td>Link Exemplo</td>
-            <td>Ecoleta</td>
-            <td>Jorge</td>
+            <td>
+              @if(isset($link->nome))
+                {{$link->nome}}
+              @else
+                Sem Nome
+              @endif
+            </td>
+            <td>
+              @if(isset($link->projeto))
+                {{$link->projeto}}
+              @else
+                Sem Projeto
+              @endif
+            </td>
+            <td>
+              @if(isset($link->criador_id))
+                {{$link->criador_id}}
+              @else
+                Sem Criador
+              @endif
+            </td>
             <td class="position-relative">
               <p class="d-inline" style="white-space: nowrap;" id="exemplo1" data-toggle="tooltip" title="Copied!">
-              https://3e.com.br/HASHSH/user 
+                @if(isset($link->linkEncurtado))
+                  {{$link->linkEncurtado}}
+                @else
+                  Falha ao carregar link
+                @endif
               </p>
               <div  class="float-end smallBtnsTable">
-                <button href="#" class="btn-secondary-small mr-2" data-bs-toggle="modal" data-bs-target="#displayLink"><i class="bi bi-eye-fill"></i></button>
+                <button href="#" class="btn-secondary-small mr-2" data-bs-toggle="modal" data-bs-target="#displayLink" onclick="ChangeItemModalId({{$link}});"><i class="bi bi-eye-fill"></i></button>
                 <button class="btn-secondary-small" onclick="CopyInnerFromId('exemplo1');"><i class="fas fa-copy"></i></button>
               </div>
             </td>
             @if(session()->get("nivelAcesso") == "Admin" || session()->get("nivelAcesso") == "Comum")
-            <td class="optionsBtns text-center">
-              <a href="#" class="btn btn-primary tableBtn d-inline"><i class="fas fa-edit mr-1"></i>Editar</a>
-              <a href="#" class="btn btn-delete tableBtn d-inline"><i class="fas fa-trash mr-1"></i>Deletar</a>
-            </td>
+              <td class="optionsBtns text-center">
+                <a href="{{route('links.edit', $link->id)}}" class="btn btn-primary tableBtn d-inline"><i class="fas fa-edit mr-1"></i>Editar</a>
+                <a href="{{route('links.destroy', $link->id)}}" class="btn btn-delete tableBtn d-inline"><i class="fas fa-trash mr-1"></i>Deletar</a>
+              </td>
             @endif
           </tr>
+          @endforeach
         </tbody>
       </table>
 

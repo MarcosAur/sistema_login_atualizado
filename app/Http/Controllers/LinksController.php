@@ -16,7 +16,13 @@ class linksController extends Controller
     {
         //se tiver logado vai pro mostrar links
         if(session()->has('userId')){
-            return view('links.index')->with("curTab", "inicio");;
+            $links;
+            if(session()->get("nivelAcesso") == "Comum"){
+                // $flights = Flight::where('criador_id', '')->get();
+            }else{
+                $links = links::all();
+            }
+            return view('links.index')->with("curTab", "inicio")->with("links", $links);
         }
         //se não tiver vai pro forms de criar link
         return redirect()->route('links.create');
@@ -83,7 +89,9 @@ class linksController extends Controller
      */
     public function edit($id)
     {
-        //
+        //TODO pegar o link pelo id
+        //passar pra view
+        return view("links.edit");
     }
 
     /**
