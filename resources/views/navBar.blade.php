@@ -1,6 +1,9 @@
 @php
   $nivelAcesso = session()->get("nivelAcesso");
   $userId = session()->get("userId");
+  if(!isset($curTab)){
+    $curTab = "";
+  }
 @endphp
 <nav class="navbar navbar-expand-lg bg-light navBar">
       <div class="container-fluid navBar">

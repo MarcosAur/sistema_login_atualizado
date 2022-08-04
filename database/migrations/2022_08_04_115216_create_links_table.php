@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('links', function (Blueprint $table) {
             $table->id();
-            $table->string("nome");
-            $table->foreignId('criador_id')->constrained('usuarios')->onUpdate('cascade')
-            ->onDelete('cascade')->nullable();
+            $table->string("nome")->nullable();
+            $table->foreignId('criador_id')->nullable()->constrained('usuarios')->onUpdate('cascade')
+            ->onDelete('cascade');
             $table->string("linkOriginal");
-            $table->string("linkEncurtado");
+            $table->string("linkEncurtado")->unique();
             $table->timestamps();
         });
     }

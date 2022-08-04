@@ -88,7 +88,9 @@
             <th>Projeto</th>
             <th>Criador</th>
             <th>Link Encurtado</th>
+            @if(session()->get("nivelAcesso") == "Admin" || session()->get("nivelAcesso") == "Comum")
             <th>Ações</th>
+            @endif
           </tr>
         </thead>
         <tbody>
@@ -105,28 +107,12 @@
                 <button class="btn-secondary-small" onclick="CopyInnerFromId('exemplo1');"><i class="fas fa-copy"></i></button>
               </div>
             </td>
+            @if(session()->get("nivelAcesso") == "Admin" || session()->get("nivelAcesso") == "Comum")
             <td class="optionsBtns text-center">
               <a href="#" class="btn btn-primary tableBtn d-inline"><i class="fas fa-edit mr-1"></i>Editar</a>
               <a href="#" class="btn btn-delete tableBtn d-inline"><i class="fas fa-trash mr-1"></i>Deletar</a>
             </td>
-          </tr>
-          <tr>
-            <td>Link Exemplo</td>
-            <td>Ecoleta</td>
-            <td>Jorge</td>
-            <td class="position-relative">
-              <p class="d-inline" style="white-space: nowrap;" id="exemplo2">
-                https://3e.com.br/HASHSH/user 
-              </p>
-              <div  class="float-end smallBtnsTable">
-                <button href="#" class="btn-secondary-small" data-bs-toggle="modal" data-bs-target="#displayLink"><i class="bi bi-eye-fill"></i></button>
-                <button class="btn-secondary-small" onclick="CopyInnerFromId('exemplo2');"><i class="fas fa-copy"></i></button>
-              </div>
-            </td>
-            <td class="optionsBtns text-center">
-              <a href="#" class="btn btn-primary tableBtn d-inline"><i class="fas fa-edit mr-1"></i>Editar</a>
-              <a href="#" class="btn btn-delete tableBtn d-inline"><i class="fas fa-trash mr-1"></i>Deletar</a>
-            </td>
+            @endif
           </tr>
         </tbody>
       </table>

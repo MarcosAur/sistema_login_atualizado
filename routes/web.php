@@ -33,7 +33,8 @@ Route::get('/login', [LoginController::class,'index'])->name("login")->middlewar
 
 Route::post('/login', [LoginController::class,'logar'])->name("validarLogin")->middleware("isNotUser");
 
-Route::get('/cadastro',[CadastroController::class,'index'])->name("cadastro")->middleware("isAdminUser");;
+Route::get('/cadastro',[CadastroController::class,'index'])->name("cadastro");
+// ->middleware("isAdminUser");
 
 Route::post('/cadastro',[CadastroController::class,'cadastrar'])->name("efetuarCadastro");
 

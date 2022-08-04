@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\links;
 
 class linksController extends Controller
 {
@@ -49,7 +50,18 @@ class linksController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $link = new links;
+        $link->linkOriginal = $request->linkOriginal;
+        if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on'){
+            $url = "https://";   
+        }else{
+            $url = "http://";   
+        }  
+        $url .= $_SERVER['HTTP_HOST'];
+        $url .= "/". rand("100000", "999999");
+        echo $url;  
+        $link->linkEncurtado = $url;
+        $link->save();
     }
 
     /**

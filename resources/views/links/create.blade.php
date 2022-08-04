@@ -14,10 +14,11 @@
     
     <div class="d-flex flex-column">
       <h4 class="text-center w-100">Criar Novo Link</h4>
-       <form class="m-auto">
+       <form class="m-auto" method="POST" action='{{route("links.store")}}'>
+        @csrf
 
         <label for="link">Insira o Link:</label>
-        <input type="text" class="textInput my-2" name="link" placeholder="https://site.3esolucoes.com.br/" />
+        <input type="text" class="textInput my-2" name="linkOriginal" placeholder="https://site.3esolucoes.com.br/" />
         
         {{-- TODO com Autencicação --}}
         {{-- @if (Checar se é usuário normal)
