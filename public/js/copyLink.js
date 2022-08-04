@@ -1,8 +1,6 @@
-function CopyInnerFromId(id) {
-    let element = document.getElementById(id);
-    let copyText = element.innerHTML.trim();
-
-    navigator.clipboard.writeText(copyText);
+function CopyLink(link) {
+    console.log(link);
+    navigator.clipboard.writeText(link);
 
     linkSuccess = document.getElementById("linkSuccess");
     linkSuccess.classList.remove("hide");

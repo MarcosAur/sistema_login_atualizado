@@ -117,16 +117,16 @@
               @endif
             </td>
             <td class="position-relative">
-              <p class="d-inline" style="white-space: nowrap;" id="exemplo1" data-toggle="tooltip" title="Copied!">
+              <p class="d-inline" style="white-space: nowrap;" data-toggle="tooltip" title="Copied!">
                 @if(isset($link->linkEncurtado))
                   {{$link->linkEncurtado}}
                 @else
                   Falha ao carregar link
                 @endif
               </p>
-              <div  class="float-end smallBtnsTable">
+              <div class="float-end smallBtnsTable">
                 <button href="#" class="btn-secondary-small mr-2" data-bs-toggle="modal" data-bs-target="#displayLink" onclick="ChangeItemModalId({{$link}});"><i class="bi bi-eye-fill"></i></button>
-                <button class="btn-secondary-small" onclick="CopyInnerFromId('exemplo1');"><i class="fas fa-copy"></i></button>
+                <button class="btn-secondary-small" onclick="CopyLink('{{$link->linkEncurtado}}');"><i class="fas fa-copy"></i></button>
               </div>
             </td>
             @if(session()->get("nivelAcesso") == "Admin" || session()->get("nivelAcesso") == "Comum")
