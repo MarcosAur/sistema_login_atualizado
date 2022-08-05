@@ -15,7 +15,7 @@ class ProjectController extends Controller
     public function index()
     {   
         $projects = projetos::all();
-        return view("projects.index")->with("curTab", "projetos")->with("project", $projects);
+        return view("projects.index")->with("curTab", "projetos")->with("projects", $projects);
     }
 
     /**
@@ -64,7 +64,8 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        //
+        $curProject = projetos::where("id", $id)->first();
+        return view('projects.edit',compact('curProject'));
     }
 
     /**
@@ -76,7 +77,7 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return redirect()->route('project.index');
     }
 
     /**
@@ -87,6 +88,5 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        //
     }
 }

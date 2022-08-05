@@ -26,7 +26,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header modalHeader">
-          <h5 class="modal-title" id="exampleModalLabel">Nome do link</h5>
+          <h5 class="modal-title" id="linkModalName">Nome do link</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">

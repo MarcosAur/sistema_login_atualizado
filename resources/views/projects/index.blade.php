@@ -13,6 +13,9 @@
     <p class="my-auto ml-4">Usuário criado com sucesso!</p>
     <button  type="button" data-bs-dismiss="alert"><i class="fas fa-times"></i></button>
   </div> -->
+  @if(session()->has('status'))
+    @include("warning", ["msg" => session()->get("status")])
+  @endif
 
 
   <!-- Content -->
@@ -24,7 +27,7 @@
             <a href="{{route("project.create")}}" class="btn btn-primary d-inline h6">Novo Projeto</a>
         </div>
       </h4>
-
+      @if(isset($projects))
       <table class="table mt-4 pb-3">
         <thead class="p-2">
           <tr>
@@ -34,22 +37,16 @@
           </tr>
         </thead>
         <tbody>
+          @foreach ($projects as $project)
           <tr>
-            <td>Ecoleta</td>
-            <td>ECOLET</td>
+            <td>{{$project->nome}}</td>
+            <td>{{$project->hash}}</td>
             <td class="optionsBtns text-center">
-              <a href="#" class="btn btn-primary tableBtn d-inline"><i class="fas fa-edit mr-1"></i>Editar</a>
-              <a href="#" class="btn btn-delete tableBtn d-inline"><i class="fas fa-trash mr-1"></i>Deletar</a>
+              <a href="{{route('project.edit', $project->id)}}" class="btn btn-primary tableBtn d-inline"><i class="fas fa-edit mr-1"></i>Editar</a>
+              <a data-bs-toggle="modal" data-bs-target="#deleteModal" onclick="showDeleteModal({{$project}})" class="btn btn-delete tableBtn d-inline"><i class="fas fa-trash mr-1"></i>Deletar</a>
             </td>
-          </tr>
-          <tr>
-            <td>Ecoleta</td>
-            <td>ECOLET</td>
-            <td class="optionsBtns text-center">
-              <a href="#" class="btn btn-primary tableBtn d-inline"><i class="fas fa-edit mr-1"></i>Editar</a>
-              <a href="#" class="btn btn-delete tableBtn d-inline"><i class="fas fa-trash mr-1"></i>Deletar</a>
-            </td>
-          </tr>
+          </tr>  
+          @endforeach
         </tbody>
       </table>
 
@@ -58,6 +55,9 @@
         <p class="p-1 mx-2">01</p>
         <a href="#" ><i class="fas fa-caret-right"></i></a>
       </div>
+      @else
+        @include('warning', ["msg"=> "Nenhum projeto cadastrado!"])
+      @endif
       
     </div>
 

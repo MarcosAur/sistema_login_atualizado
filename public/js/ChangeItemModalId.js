@@ -11,5 +11,8 @@ function ChangeItemModalId(link) {
     let shortLink = document.getElementById("shortLinkModalDisplay");
     shortLink.textContent = link.linkEncurtado;
 
+    let label = document.getElementById("linkModalName");
+    label.textContent = link.nome ? link.nome : "Sem Nome";
+
     console.log(link);
 }
