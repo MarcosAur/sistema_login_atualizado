@@ -77,7 +77,16 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return redirect()->route('project.index');
+
+        $curProject = projetos::where("id", $id)->first();
+
+        $curProject->nome = $request->nome;
+        $curProject->hash = $request->hash;
+
+        $curProject->save();
+
+        $request->session()->flash('status', 'Projeto atualizado com sucesso!');
+        return redirect()->route("project.index");
     }
 
     /**
