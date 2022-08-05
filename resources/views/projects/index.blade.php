@@ -4,11 +4,7 @@
 <div class="container-fluid content">
 
   <!-- BreadCrumb -->
-  <div class="breadCrumbHolder my-4">
-    <a class="d-inline">Admin</a>
-    <a class="d-inline"><i class="fas fa-angle-right"></i>Projetos</a>
-  </div>
-
+  @include("breadCrumb", ["paths" => ["Admin", "Projetos"]])
 
 
   <!-- Messages -->
@@ -25,7 +21,7 @@
     <div class="d-flex flex-column">
       <h4 class="text-center w-100">Todos os Projetos
       <div class="float-end">
-            <button class="btn-primary d-inline h6">Novo Projeto</button>
+            <a href="{{route("project.create")}}" class="btn btn-primary d-inline h6">Novo Projeto</a>
         </div>
       </h4>
 

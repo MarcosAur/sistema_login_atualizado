@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\projetos;
 
 class ProjectController extends Controller
 {
@@ -12,8 +13,9 @@ class ProjectController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view("projects.index")->with("curTab", "projetos");
+    {   
+        $projects = projetos::all();
+        return view("projects.index")->with("curTab", "projetos")->with("project", $projects);
     }
 
     /**
@@ -23,7 +25,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view("projects.create");
     }
 
     /**
@@ -34,7 +36,13 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $projeto = new projetos;
+        $projeto->nome = $request->nome;
+        $projeto->hash = $request->hash;
+
+        $projeto->save();
+        $request->session()->flash('status', 'Projeto criado com sucesso!');
+        return redirect()->route("project.index");
     }
 
     /**
