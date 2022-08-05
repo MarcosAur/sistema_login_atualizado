@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\projectRequest;
 use App\Models\projetos;
 
 class ProjectController extends Controller
@@ -34,7 +35,7 @@ class ProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(projectRequest $request)
     {
         $projeto = new projetos;
         $projeto->nome = $request->nome;
