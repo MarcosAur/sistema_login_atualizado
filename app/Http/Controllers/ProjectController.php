@@ -89,13 +89,24 @@ class ProjectController extends Controller
         return redirect()->route("project.index");
     }
 
+    public function delete($id){
+        $curProject = projetos::where("id", $id)->first();
+        return view('projects.delete',compact('curProject'));
+    }
+
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
+        $curProject = projetos::where("id", $id)->first();
+
+        $curProject->delete();
+
+        $request->session()->flash('status', 'Projeto deletado com sucesso!');
+        return redirect()->route("project.index");
     }
 }

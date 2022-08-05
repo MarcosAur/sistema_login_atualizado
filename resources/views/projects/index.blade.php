@@ -43,7 +43,7 @@
             <td>{{$project->hash}}</td>
             <td class="optionsBtns text-center">
               <a href="{{route('project.edit', $project->id)}}" class="btn btn-primary tableBtn d-inline"><i class="fas fa-edit mr-1"></i>Editar</a>
-              <a data-bs-toggle="modal" data-bs-target="#deleteModal" onclick="showDeleteModal({{$project}})" class="btn btn-delete tableBtn d-inline"><i class="fas fa-trash mr-1"></i>Deletar</a>
+              <a href="{{route('project.delete', $project->id)}}" class="btn btn-delete tableBtn d-inline"><i class="fas fa-trash mr-1"></i>Deletar</a>
             </td>
           </tr>  
           @endforeach

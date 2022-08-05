@@ -41,3 +41,5 @@ Route::post('/cadastro',[CadastroController::class,'cadastrar'])->name("efetuarC
 
 Route::resource('links', LinksController::class);
 Route::resource('project', ProjectController::class);
+
+Route::get('/project/delete/{id}',[ProjectController::class,'delete'])->name("project.delete");
