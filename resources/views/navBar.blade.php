@@ -23,21 +23,21 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <!-- colocar a classe active no nav-item que for referente a pagina atual 
-          Lembrar de tirar a barra tambem-->
           <li class="nav-item {{($curTab == 'inicio') ? 'active' : ''}}">
             <a class="nav-link d-inline growHover" href="{{route('links.index')}}"
-            ><i class="bi bi-house-fill d-inline pr-2"></i>Início {{$userId}}</a
-            >
+            ><i class="bi bi-house-fill d-inline pr-2"></i>Início {{$userId}}</a>
           </li>
           
-          <!-- <div class="barra"></div>
-          
-          <li class="nav-item">
-            <a class="nav-link d-inline growHover" href="#"
-            ><i class="bi bi-person-fill"></i>Perfil</a
-            >
-          </li> -->
+          @if(isset($userId))
+            <div class="barra"></div>
+            
+            <li class="nav-item">
+              <a class="nav-link d-inline growHover" href="#"
+              ><i class="bi bi-person-fill"></i>Perfil</a
+              >
+            </li>
+          @endif
+
           @if(!isset($userId))
             <div class="barra"></div>
 
@@ -73,7 +73,7 @@
             <div class="barra"></div>
             
             <li class="nav-item {{($curTab == 'solicitacoes') ? 'active' : ''}}">
-              <a class="nav-link d-inline growHover" href="#"
+              <a class="nav-link d-inline growHover" href="{{route('solicitation.index')}}"
               ><i class="fas fa-comment"></i>Solicitações</a
               >
             </li>
