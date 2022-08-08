@@ -12,7 +12,7 @@
     
     <div class="d-flex flex-column">
       <h4 class="text-center w-100">Cadastrar Novo Usuário</h4>
-       <form class="m-auto"  method="POST" action='{{route("efetuarCadastro")}}'>
+       <form class="m-auto"  method="POST" action='{{route("users.create")}}'>
         @csrf
        <label for="nome">Nome:</label>
         <input required type="text" class="textInput my-2" name="nome" placeholder="Seu Nome" />

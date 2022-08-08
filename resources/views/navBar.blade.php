@@ -91,7 +91,7 @@
             <div class="barra"></div>
             
             <li class="nav-item {{($curTab == 'usuarios') ? 'active' : ''}}">
-              <a class="nav-link d-inline growHover" href="#"
+              <a class="nav-link d-inline growHover" href="{{route('users.index')}}"
                 ><i class="fas fa-users"></i>Usuários</a
               >
             </li>

@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LinksController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\CadastroController;
+use App\Models\Usuario;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,9 +38,15 @@ Route::post('/login', [LoginController::class,'logar'])->name("validarLogin")->m
 Route::get('/cadastro',[CadastroController::class,'index'])->name("cadastro");
 // ->middleware("isAdminUser");
 
-Route::post('/cadastro',[CadastroController::class,'cadastrar'])->name("efetuarCadastro");
+Route::post('/cadastro',[CadastroController::class,'cadastrar'])->name("users.create");
 
 Route::resource('links', LinksController::class);
 Route::resource('project', ProjectController::class);
 
 Route::get('/project/delete/{id}',[ProjectController::class,'delete'])->name("project.delete");
+
+// Rota temporaria, quando mudar o sistema de login, mover para o controller
+Route::get("/users", function () {
+    $users = usuario::all();
+    return view("users.index")->with("curTab", "usuarios")->with("users", $users);
+})->name("users.index");
