@@ -31,8 +31,8 @@
           @if(isset($userId))
             <div class="barra"></div>
             
-            <li class="nav-item">
-              <a class="nav-link d-inline growHover" href="#"
+            <li class="nav-item {{($curTab == 'perfil') ? 'active' : ''}}">
+              <a class="nav-link d-inline growHover" href="{{route('users.edit', session()->get('userId'))}}"
               ><i class="bi bi-person-fill"></i>Perfil</a
               >
             </li>

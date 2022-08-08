@@ -53,7 +53,11 @@ Route::get("/users", function () {
 
 Route::get("/users/{id}/edit", function ($id) {
     $user = usuario::where("id", $id)->first();
-    return view("users.edit")->with("user", $user);
+    if($id == session()->get("userId")){
+        return view("users.edit")->with("user", $user)->with("curTab", "perfil");
+    }else{
+        return view("users.edit")->with("user", $user);
+    }
 })->name("users.edit");
 
 Route::get("/users/delete/{id}", function ($id) {
