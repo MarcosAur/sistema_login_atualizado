@@ -9,453 +9,454 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
 * {
-  font-family: "Roboto", sans-serif;
-  /* padding: 0;
+    font-family: "Roboto", sans-serif;
+    /* padding: 0;
   margin: 0; */
 }
 
 html,
 .container {
-  background-color: #e9e9e9;
+    background-color: #e9e9e9;
 }
 
 .content {
-  background-color: #e9e9e9;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 5%;
+    background-color: #e9e9e9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 5%;
 }
 
 .contentHolder {
-  min-width: 70%;
+    min-width: 70%;
 }
 
 .card {
-  max-width: 95%;
-  border-radius: 10px;
+    max-width: 95%;
+    border-radius: 10px;
 }
 
 .btn-primary {
-  background-color: #f26506;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  display: flex;
-  flex-direction: row;
-  padding: 7px 10px;
+    background-color: #f26506;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    padding: 7px 10px;
 }
 .btn-gray {
-  background-color: #c0c0c0;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  display: flex;
-  flex-direction: row;
-  padding: 7px 10px;
+    background-color: #c0c0c0;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    padding: 7px 10px;
 }
 .btn-secondary {
-  background-color: #ffc316;
-  text-decoration: none;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  display: flex;
-  flex-direction: row;
-  padding: 7px 10px;
+    background-color: #ffc316;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    padding: 7px 10px;
 }
 .btn-primary-lighter {
-  background-color: #ffa96f;
-  text-decoration: none;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  display: flex;
-  flex-direction: row;
-  padding: 7px 10px;
-  margin-right: 10px;
+    background-color: #ffa96f;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    padding: 7px 10px;
+    margin-right: 10px;
 }
 
 a.btn-primary-lighter:hover {
-  color: white;
+    color: white;
 }
 
 .btn-secondary:hover {
-  background-color: #e9ad00;
+    background-color: #e9ad00;
 }
 
 .btn-delete {
-  background-color: #f23006;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  display: flex;
-  flex-direction: row;
-  padding: 7px 10px;
+    background-color: #f23006;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    padding: 7px 10px;
 }
 
 .btn-delete:hover {
-  background-color: #bd2503;
-  color: white;
+    background-color: #bd2503;
+    color: white;
 }
 
 .btn-primary-small {
-  background-color: #f26506;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  margin: 0;
-  padding: 0;
-  width: 25px;
-  height: 25px;
+    background-color: #f26506;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    margin: 0;
+    padding: 0;
+    width: 25px;
+    height: 25px;
 }
 .btn-secondary-small {
-  background-color: #ffc316;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  margin: 1px;
-  padding: 0;
-  width: 25px;
-  height: 25px;
+    background-color: #ffc316;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    margin: 1px;
+    padding: 0;
+    width: 25px;
+    height: 25px;
 }
 
 a.btn-secondary-small {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-right: 3px;
-  margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3px;
+    margin-left: auto;
 }
 
 a.btn-secondary-small:hover,
 button.btn-secondary-small:hover {
-  background-color: #e9ad00;
-  color: white;
+    background-color: #e9ad00;
+    color: white;
 }
 
 .btn-primary-small i,
 .btn-secondary-small i {
-  padding-left: 1px;
-  font-size: 15px;
+    padding-left: 1px;
+    font-size: 15px;
 }
 
 .optionsBtns,
 .optionsBtns a {
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .smallBtnsTable {
-  overflow: hidden;
-  position: absolute;
-  right: 0;
-  top: 6px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  display: inline-flex;
-  align-items: center;
-  white-space: nowrap;
+    overflow: hidden;
+    /* position: absolute; */
+    padding-left: 10px;
+    right: 0;
+    top: 6px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
 }
 
 .btn-primary:hover {
-  background-color: #df5e07;
+    background-color: #df5e07;
 }
 
 .btn-primary i {
-  padding-right: 3px;
+    padding-right: 3px;
 }
 
 .breadCrumb {
-  position: relative;
-  height: 26px;
-  font-size: 12px;
+    position: relative;
+    height: 26px;
+    font-size: 12px;
 }
 
 .breadCrumbHolder a {
-  color: black;
-  cursor: pointer;
+    color: black;
+    cursor: pointer;
 }
 .breadCrumbHolder a i {
-  padding: 0 5px;
+    padding: 0 5px;
 }
 
 .breadCrumbHolder a:hover {
-  color: #f26506;
+    color: #f26506;
 }
 .breadCrumbHolder a:hover i {
-  color: black;
+    color: black;
 }
 
 .centeredText {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin-left: -8px;
-  color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-left: -8px;
+    color: white;
 }
 a.centeredText:hover {
-  color: black;
+    color: black;
 }
 
 table {
-  border-collapse: separate;
-  border-spacing: 10px 0;
-  display: block;
-  max-width: -moz-fit-content;
-  max-width: fit-content;
-  margin: 0 auto;
-  overflow-x: auto;
-  white-space: nowrap;
+    border-collapse: separate;
+    border-spacing: 10px 0;
+    display: block;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    margin: 0 auto;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
 table th {
-  color: white;
-  background-color: #f26506 !important;
-  border-radius: 8px;
-  overflow: auto;
+    color: white;
+    background-color: #f26506 !important;
+    border-radius: 8px;
+    overflow: auto;
 }
 table td {
-  white-space: nowrap;
+    white-space: nowrap;
 }
 
 table td a {
-  background-color: #ffc316;
-  padding: 4px;
-  color: white;
-  border-radius: 3px;
-  margin: 3px;
+    background-color: #ffc316;
+    padding: 4px;
+    color: white;
+    border-radius: 3px;
+    margin: 3px;
 }
 
 form {
-  min-width: 70%;
+    min-width: 70%;
 }
 
 input::placeholder,
 input::-webkit-input-placeholder {
-  color: #505050;
-  opacity: 1;
+    color: #505050;
+    opacity: 1;
 }
 
 .textInput {
-  width: 100%;
-  font-size: 18px;
-  margin: 5px 5px 5px 0;
-  padding: 5px 10px;
-  background-color: rgba(255, 195, 22, 0.38);
-  border: none;
-  border-radius: 10px;
-  outline: none;
-  color: black;
+    width: 100%;
+    font-size: 18px;
+    margin: 5px 5px 5px 0;
+    padding: 5px 10px;
+    background-color: rgba(255, 195, 22, 0.38);
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    color: black;
 }
 .textInput:focus {
-  outline: none;
-  outline: none !important;
-  box-shadow: none;
+    outline: none;
+    outline: none !important;
+    box-shadow: none;
 }
 .bigTextInput {
-  min-height: 10rem;
+    min-height: 10rem;
 }
 
 .simpleLink,
 .simpleLink:visited {
-  color: black;
-  font-size: 13px;
+    color: black;
+    font-size: 13px;
 }
 .simpleLink:hover {
-  color: #f26506;
+    color: #f26506;
 }
 
 .pagination {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
 }
 .pagination p {
-  background-color: #f1f1f1;
-  border-radius: 5px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
 }
 .pagination a {
-  padding: 0;
-  color: #ffc316;
-  font-size: 48px;
-  transition: all 0.5s;
-  margin-top: -14px;
+    padding: 0;
+    color: #ffc316;
+    font-size: 48px;
+    transition: all 0.5s;
+    margin-top: -14px;
 }
 .pagination a:hover {
-  padding: 0;
-  color: #e9ad00;
+    padding: 0;
+    color: #e9ad00;
 }
 
 .message {
-  max-width: 95%;
-  padding: 10px;
-  color: white;
-  background-color: #ffc316;
-  font-size: 12px;
-  margin: 15px 5px;
-  border-radius: 5px;
-  align-items: center;
+    max-width: 95%;
+    padding: 10px;
+    color: white;
+    background-color: #ffc316;
+    font-size: 12px;
+    margin: 15px 5px;
+    border-radius: 5px;
+    align-items: center;
 }
 .message i {
-  padding-right: 5px;
-  font-size: 22px;
+    padding-right: 5px;
+    font-size: 22px;
 }
 .message button {
-  color: white;
-  background-color: transparent;
-  border: none;
-  outline: none;
+    color: white;
+    background-color: transparent;
+    border: none;
+    outline: none;
 }
 .message p {
-  font-size: 14px;
-  margin-right: auto;
+    font-size: 14px;
+    margin-right: auto;
 }
 
 .solicitation {
-  position: relative;
-  min-height: 400px;
-  max-width: 500px;
-  min-width: 300px;
-  background-color: #f4f4f4 !important;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 10px;
+    position: relative;
+    min-height: 400px;
+    max-width: 500px;
+    min-width: 300px;
+    background-color: #f4f4f4 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
 }
 .solicitation .card-header {
-  width: 100%;
-  background-color: #ffc316;
-  color: white;
+    width: 100%;
+    background-color: #ffc316;
+    color: white;
 }
 
 .solicitation .card-header.finished {
-  background-color: #c0c0c0;
+    background-color: #c0c0c0;
 }
 
 .solicitation button {
-  position: absolute;
-  bottom: 1em;
-  padding: 5px 20px;
-  margin: 0 auto;
+    position: absolute;
+    bottom: 1em;
+    padding: 5px 20px;
+    margin: 0 auto;
 }
 .solicitationDisplay {
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 @media (max-width: 1180px) {
-  .solicitationDisplay {
-    flex-direction: column;
-  }
+    .solicitationDisplay {
+        flex-direction: column;
+    }
 }
 .filterCard {
-  background-color: rgba(255, 195, 22, 0.38);
-  border: none;
+    background-color: rgba(255, 195, 22, 0.38);
+    border: none;
 }
 .filterCard .inputs {
-  flex-direction: row;
+    flex-direction: row;
 }
 
 .filterCard .inputs div {
-  padding: 10px;
-  width: 100%;
+    padding: 10px;
+    width: 100%;
 }
 
 @media (max-width: 700px) {
-  .filterCard .inputs {
-    flex-direction: column;
-  }
+    .filterCard .inputs {
+        flex-direction: column;
+    }
 }
 
 .filterCard .inputs div input {
-  max-width: 500px;
+    max-width: 500px;
 }
 
 .incomeMessages {
-  min-height: 500px;
-  max-height: 800px;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  position: relative;
+    min-height: 500px;
+    max-height: 800px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: relative;
 }
 .textMsg,
 .textMsg input {
-  background-color: #d8d6d6;
-  border-radius: 0 0 5px 5px;
+    background-color: #d8d6d6;
+    border-radius: 0 0 5px 5px;
 }
 .textMsg input {
-  width: 100%;
-  outline: none;
-  border: none;
-  padding-left: 20px;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding-left: 20px;
 }
 .textMsg button {
-  margin-right: 10px;
+    margin-right: 10px;
 }
 
 .msg {
-  background-color: #d8d6d6;
-  border-radius: 5px;
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  margin: 10px;
+    background-color: #d8d6d6;
+    border-radius: 5px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    margin: 10px;
 }
 
 .bg-gray {
-  background-color: #d8d6d6;
+    background-color: #d8d6d6;
 }
 
 .msg i {
-  padding-left: 5px;
+    padding-left: 5px;
 }
 
 .msgContent {
-  padding: 10px;
+    padding: 10px;
 }
 
 .msg.left {
-  float: left;
+    float: left;
 }
 .msg.right {
-  float: right;
-  justify-content: right;
+    float: right;
+    justify-content: right;
 }
 
 .modalHeader {
-  background-color: #f26506;
-  color: white;
+    background-color: #f26506;
+    color: white;
 }
 .modalHeaderSecondary {
-  background-color: #ffc316;
-  color: white;
+    background-color: #ffc316;
+    color: white;
 }
 .msgsHeader {
-  position: relative;
-  min-height: 55px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+    position: relative;
+    min-height: 55px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 .msgsHeader button {
-  position: absolute;
-  right: 10px;
+    position: absolute;
+    right: 10px;
 }
 @media (max-width: 500px) {
-  .msgsHeader {
-    justify-content: left;
-  }
+    .msgsHeader {
+        justify-content: left;
+    }
 }
 .hide {
-  display: none !important;
+    display: none !important;
 }
