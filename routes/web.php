@@ -55,3 +55,8 @@ Route::get("/users/{id}/edit", function ($id) {
     $user = usuario::where("id", $id)->first();
     return view("users.edit")->with("user", $user);
 })->name("users.edit");
+
+Route::get("/users/delete/{id}", function ($id) {
+    $user = usuario::where("id", $id)->first();
+    return view("users.delete")->with("user", $user);
+})->name("users.delete");

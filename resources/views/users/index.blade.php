@@ -59,7 +59,7 @@
                         <td>{{$user->email}}</td>
                         <td class="optionsBtns text-center">
                           <a href="{{route('users.edit', $user->id)}}" class="btn btn-primary tableBtn d-inline"><i class="fas fa-edit mr-1"></i>Editar</a>
-                          <a href="#" class="btn btn-delete tableBtn d-inline"><i class="fas fa-trash mr-1"></i>Deletar</a>
+                          <a href="{{route('users.delete', $user->id)}}" class="btn btn-delete tableBtn d-inline"><i class="fas fa-trash mr-1"></i>Deletar</a>
                         </td>
                     </tr>
                 @endforeach
