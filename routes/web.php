@@ -45,8 +45,13 @@ Route::resource('project', ProjectController::class);
 
 Route::get('/project/delete/{id}',[ProjectController::class,'delete'])->name("project.delete");
 
-// Rota temporaria, quando mudar o sistema de login, mover para o controller
+// Rotas temporarias, quando mudar o sistema de login, mover para o controller
 Route::get("/users", function () {
     $users = usuario::all();
     return view("users.index")->with("curTab", "usuarios")->with("users", $users);
 })->name("users.index");
+
+Route::get("/users/{id}/edit", function ($id) {
+    $user = usuario::where("id", $id)->first();
+    return view("users.edit")->with("user", $user);
+})->name("users.edit");

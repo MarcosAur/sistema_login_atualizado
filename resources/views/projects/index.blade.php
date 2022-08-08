@@ -45,7 +45,7 @@
               <a href="{{route('project.edit', $project->id)}}" class="btn btn-primary tableBtn d-inline"><i class="fas fa-edit mr-1"></i>Editar</a>
               <a href="{{route('project.delete', $project->id)}}" class="btn btn-delete tableBtn d-inline"><i class="fas fa-trash mr-1"></i>Deletar</a>
             </td>
-          </tr>  
+          </tr>
           @endforeach
         </tbody>
       </table>

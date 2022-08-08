@@ -31,10 +31,10 @@
       <!-- filtro -->
       <div class="collapse" id="filter">
         <form class="card card-body m-auto filterCard">
-                <div class="d-flex flex-column">
-                    <label for="filterByName">Filtrar por Nome</label>
-                    <input type="text" class="textInput my-2" name="filterByName" placeholder="Nome" />
-                </div>
+            <div class="d-flex flex-column">
+                <label for="filterByName">Filtrar por Nome</label>
+                <input type="text" class="textInput my-2" name="filterByName" placeholder="Nome" />
+            </div>
             <div class="d-flex justify-content-center">
                 <button type="submit" class="btn-primary px-4 mt-2 mb-2 growHover">Filtrar</button>
             </div>
@@ -58,8 +58,8 @@
                         <td>{{$user->nivelAcesso}}</td>
                         <td>{{$user->email}}</td>
                         <td class="optionsBtns text-center">
-                        <a href="#" class="btn btn-primary tableBtn d-inline"><i class="fas fa-edit mr-1"></i>Editar</a>
-                        <a href="#" class="btn btn-delete tableBtn d-inline"><i class="fas fa-trash mr-1"></i>Deletar</a>
+                          <a href="{{route('users.edit', $user->id)}}" class="btn btn-primary tableBtn d-inline"><i class="fas fa-edit mr-1"></i>Editar</a>
+                          <a href="#" class="btn btn-delete tableBtn d-inline"><i class="fas fa-trash mr-1"></i>Deletar</a>
                         </td>
                     </tr>
                 @endforeach
