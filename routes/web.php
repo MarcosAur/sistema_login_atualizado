@@ -23,7 +23,7 @@ Route::get('/welcome', function () {
 });
 Route::get('/', function () {
     return redirect()->route('links.index');
-});
+})->name("index");
 
 Route::get('/deslogar', function () {
     session()->forget('userId');

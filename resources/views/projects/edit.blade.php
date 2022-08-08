@@ -4,7 +4,10 @@
 <div class="container-fluid content">
 
   <!-- BreadCrumb -->
-  @include("breadCrumb", ["paths" => ["Admin", "Projetos", "Editar Projetos"]])
+  @include("breadCrumb", ["paths" => [
+    ["name"=>"Projetos", "route"=>"project.index"],
+    ["name"=>"Editar Projeto", "route"=>"project.index"]
+    ]])
 
   <!-- Content -->
   <div class="card shadow p-3 m-1 pt-4 bg-body rounded-lg border-0 d-inline">

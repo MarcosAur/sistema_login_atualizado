@@ -5,7 +5,9 @@
 <div class="container-fluid content">
 
   <!-- BreadCrumb -->
-  @include("breadCrumb", ["paths" => ["Admin", "Usuários"]])
+  @include("breadCrumb", ["paths" => [
+    ["name"=>"Usuários", "route"=>"users.index"]
+  ]])
 
   
 

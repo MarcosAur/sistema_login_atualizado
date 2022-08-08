@@ -25,7 +25,7 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item {{($curTab == 'inicio') ? 'active' : ''}}">
             <a class="nav-link d-inline growHover" href="{{route('links.index')}}"
-            ><i class="bi bi-house-fill d-inline pr-2"></i>Início {{$userId}}</a>
+            ><i class="bi bi-house-fill d-inline pr-2"></i>Início</a>
           </li>
           
           @if(isset($userId))

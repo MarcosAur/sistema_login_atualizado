@@ -5,11 +5,10 @@
 <div class="container-fluid content">
 
   <!-- BreadCrumb -->
-  <div class="breadCrumbHolder my-4">
-    <a class="d-inline">Usuário</a>
-    <a class="d-inline"><i class="fas fa-angle-right"></i>Solicitações</a>
-    <a class="d-inline"><i class="fas fa-angle-right"></i>Criar Solicitação</a>
-  </div>
+  @include("breadCrumb", ["paths" => [
+    ["name"=>"Solicitações", "route"=>"solicitation.index"],
+    ["name"=>"Criar Solicitação", "route"=>"solicitation.create"]
+  ]])
 
   <!-- Content -->
   <div class="card shadow p-3 m-1 pt-4 bg-body rounded-lg border-0 d-inline">

@@ -4,11 +4,11 @@
 <div class="container-fluid content">
 
   <!-- BreadCrumb -->
-  @if(session()->get("nivelAcesso") == "Comum")
-    @include("breadCrumb", ["paths" => ["Usuário", "Novo Link"]])
-  @elseif(!session()->has('userId'))
-    @include("breadCrumb", ["paths" => ["Deslogado", "Início"]])
-  @endif
+  @include("breadCrumb", ["paths" => [
+    ["name"=>"Links", "route"=>"links.index"],
+    ["name"=>"Novo Link", "route"=>"links.create"]
+  ]])
+
   <!-- Content -->
   <div class="card shadow p-3 m-1 pt-4 bg-body rounded-lg border-0 d-inline">
     

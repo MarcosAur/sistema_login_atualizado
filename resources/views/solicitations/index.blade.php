@@ -5,7 +5,9 @@
 <div class="container-fluid content">
 
   <!-- BreadCrumb -->
-  @include("breadCrumb", ["paths" => ["Usuário", "Solicitações"]])
+  @include("breadCrumb", ["paths" => [
+    ["name"=>"Solicitações", "route"=>"solicitation.index"]
+  ]])
 
   <!-- Content -->
   <div class="card shadow p-3 m-1 pt-4 bg-body rounded-lg border-0 d-inline">
@@ -25,7 +27,7 @@
             <div class="card-body">
               <p class="text-center">Preciso que seja registrado um novo usuário ...</p>
          </div>
-          <a class="btn btn-primary"><i class="fas fa-plus m-auto pr-1"></i>Abrir</a>
+            <a class="btn btn-primary" href="{{route('solicitation.show', 0)}}"><i class="fas fa-plus m-auto pr-1"></i>Abrir</a>
           </div>
           <div class="solicitation shadow bg-body rounded-lg border-0 ">
             <div class="card-header finished">Nome</div>
