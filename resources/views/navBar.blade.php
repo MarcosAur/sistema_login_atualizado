@@ -46,18 +46,8 @@
               ><i class="fas fa-sign-in-alt"></i>Logar</a
               >
             </li>    
-          @else
-            <div class="barra"></div>
-
-            <li class="nav-item {{($curTab == 'deslogar') ? 'active' : ''}}">
-              <a class="nav-link d-inline growHover" href="/deslogar"
-                ><i class="fas fa-sign-out-alt"></i>Deslogar</a
-              >
-            </li>
           @endif
           
-          
-
           @if($nivelAcesso=="Comum")
             <div class="barra"></div>
             
@@ -93,6 +83,16 @@
             <li class="nav-item {{($curTab == 'usuarios') ? 'active' : ''}}">
               <a class="nav-link d-inline growHover" href="{{route('users.index')}}"
                 ><i class="fas fa-users"></i>Usuários</a
+              >
+            </li>
+          @endif
+
+          @if(isset($userId))
+            <div class="barra"></div>
+
+            <li class="nav-item {{($curTab == 'deslogar') ? 'active' : ''}}">
+              <a class="nav-link d-inline growHover" href="/deslogar"
+                ><i class="fas fa-sign-out-alt"></i>Deslogar</a
               >
             </li>
           @endif

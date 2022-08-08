@@ -18,14 +18,14 @@
             <div class="card-body">
               <p class="text-center">Preciso que seja registrado um novo usuário ...</p>
             </div>
-            <button class="btn-primary"><i class="fas fa-plus m-auto pr-1"></i>Abrir</button>
+            <a class="btn btn-primary" href="{{route('solicitation.show', 0)}}"><i class="fas fa-plus m-auto pr-1"></i>Abrir</a>
           </div>
           <div class="solicitation shadow bg-body rounded-lg border-0 ">
             <div class="card-header">Nome</div>
             <div class="card-body">
               <p class="text-center">Preciso que seja registrado um novo usuário ...</p>
          </div>
-          <button class="btn-primary"><i class="fas fa-plus m-auto pr-1"></i>Abrir</button>
+          <a class="btn btn-primary"><i class="fas fa-plus m-auto pr-1"></i>Abrir</a>
           </div>
           <div class="solicitation shadow bg-body rounded-lg border-0 ">
             <div class="card-header finished">Nome</div>

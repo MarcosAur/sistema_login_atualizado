@@ -68,3 +68,7 @@ Route::get("/solicitations", function (){
 Route::get("/solicitations/create", function (){
     return view("solicitations.create");
 })->name("solicitation.create");
+
+Route::get("/solicitations/{id}", function ($id){
+    return view("solicitations.show");
+})->name("solicitation.show");

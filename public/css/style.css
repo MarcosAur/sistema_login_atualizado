@@ -342,6 +342,7 @@ input::-webkit-input-placeholder {
     background-color: #c0c0c0;
 }
 
+.solicitation a,
 .solicitation button {
     position: absolute;
     bottom: 1em;
