@@ -64,3 +64,7 @@ Route::get("/users/delete/{id}", function ($id) {
 Route::get("/solicitations", function (){
     return view("solicitations.index")->with("curTab", "solicitacoes");
 })->name("solicitation.index");
+
+Route::get("/solicitations/create", function (){
+    return view("solicitations.create");
+})->name("solicitation.create");

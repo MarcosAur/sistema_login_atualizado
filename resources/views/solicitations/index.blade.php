@@ -36,7 +36,7 @@
           </div>
        </div>
        @if(session()->get("nivelAcesso") == "Comum" || session()->get("nivelAcesso") == "Observador")
-        <a class="simpleLink text-center" href="#">Estou com um problema muito sério, preciso falar com o admin!</a>
+        <a class="simpleLink text-center" href="{{route('solicitation.create')}}">Estou com um problema muito sério, preciso falar com o admin!</a>
        @endif
       </div>
   </div>
