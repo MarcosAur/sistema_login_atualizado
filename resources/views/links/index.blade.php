@@ -124,7 +124,7 @@
               @endif
             </td>
             <td class="position-relative">
-              <p class="d-inline" style="white-space: nowrap;" data-toggle="tooltip" title="Copied!">
+              <p class="d-inline" style="white-space: nowrap;">
                 @if(isset($link->linkEncurtado))
                   {{$link->linkEncurtado}}
                 @else
