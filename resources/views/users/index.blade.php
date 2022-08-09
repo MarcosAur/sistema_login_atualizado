@@ -26,7 +26,7 @@
       <h4 class="text-center w-100">Todos os Usuários
         <div class="float-end">
             <a class="btn-primary btn d-inline h6" href="{{route('users.create')}}"><i class="fas fa-user-plus fa-xs m-auto"></i>Novo Usuário</a>
-            <button class="btn-primary d-inline h6 ml-2" type="button" data-bs-toggle="collapse" data-bs-target="#filter" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-sort-amount-down fa-xs m-auto"></i>Filtrar</button>
+            <button class="btn-primary d-inline h6 ml-2" type="button" data-bs-toggle="collapse" data-bs-target="#filter" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-search fa-xs m-auto"></i>Pesquisar</button>
         </div>
       </h4>
 
@@ -38,7 +38,7 @@
                 <input type="text" class="textInput my-2" name="filterByName" placeholder="Nome" />
             </div>
             <div class="d-flex justify-content-center">
-                <button type="submit" class="btn-primary px-4 mt-2 mb-2 growHover">Filtrar</button>
+                <button type="submit" class="btn-primary px-4 mt-2 mb-2 growHover">Pesquisar</button>
             </div>
         </form>
       </div>
