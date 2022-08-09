@@ -64,10 +64,10 @@ class linksController extends Controller
             $url = "http://";   
         }  
         $url .= $_SERVER['HTTP_HOST'];
-        $url .= "/". rand("100000", "999999");
-        echo $url;  
+        $url .= "/". rand("100000", "999999"); 
         $link->linkEncurtado = $url;
         $link->save();
+        return view("links.success")->with("url", $link->linkEncurtado)->with("originalUrl", $link->linkOriginal);
     }
 
     /**
@@ -107,14 +107,24 @@ class linksController extends Controller
         //
     }
 
+    public function delete($id){
+        $curLink = links::where("id", $id)->first();
+        return view('links.delete',compact('curLink'));
+    }
+
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        $curLink = links::where("id", $id)->first();
+
+        $curLink->delete();
+
+        $request->session()->flash('status', 'Link deletado com sucesso!');
+        return redirect()->route("links.index");
     }
 }

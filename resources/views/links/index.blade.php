@@ -49,9 +49,14 @@
   </div>
 
 
+  @if(session()->has('status'))
+    @include("warning", ["msg" => session()->get("status")])
+  @endif
   <!-- Content -->
   <div class="card shadow p-3 m-1 pt-4 bg-body rounded-lg border-0 d-inline">
     
+
+
     <div class="d-flex flex-column">
       <h4 class="text-center w-100">{{(session()->get("nivelAcesso") == "Admin" || session()->get("nivelAcesso") == "Observador") ? 'Todos os Links' : 'Seus Links'}}
         @if(session()->get("nivelAcesso") == "Admin" || session()->get("nivelAcesso") == "Observador")
@@ -134,7 +139,7 @@
             @if(session()->get("nivelAcesso") == "Admin" || session()->get("nivelAcesso") == "Comum")
               <td class="optionsBtns text-center">
                 <a href="{{route('links.edit', $link->id)}}" class="btn btn-primary tableBtn d-inline"><i class="fas fa-edit mr-1"></i>Editar</a>
-                <a href="{{route('links.destroy', $link->id)}}" class="btn btn-delete tableBtn d-inline"><i class="fas fa-trash mr-1"></i>Deletar</a>
+                <a href="{{route('links.delete', $link->id)}}" class="btn btn-delete tableBtn d-inline"><i class="fas fa-trash mr-1"></i>Deletar</a>
               </td>
             @endif
           </tr>

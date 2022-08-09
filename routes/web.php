@@ -41,6 +41,8 @@ Route::get('/cadastro',[CadastroController::class,'index'])->name("cadastro");
 Route::post('/cadastro',[CadastroController::class,'cadastrar'])->name("users.create");
 
 Route::resource('links', LinksController::class);
+Route::get('/links/delete/{id}',[LinksController::class,'delete'])->name("links.delete");
+
 Route::resource('project', ProjectController::class);
 
 Route::get('/project/delete/{id}',[ProjectController::class,'delete'])->name("project.delete");
