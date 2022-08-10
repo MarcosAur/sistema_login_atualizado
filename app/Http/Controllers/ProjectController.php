@@ -15,7 +15,7 @@ class ProjectController extends Controller
      */
     public function index()
     {   
-        $projects = projetos::all();
+        $projects = projetos::paginate(10);
         return view("projects.index")->with("curTab", "projetos")->with("projects", $projects);
     }
 

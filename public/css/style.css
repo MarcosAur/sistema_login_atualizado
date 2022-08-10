@@ -461,3 +461,10 @@ input::-webkit-input-placeholder {
 .hide {
     display: none !important;
 }
+
+a.disabled {
+    color: #c0c0c0;
+}
+a.disabled:hover {
+    color: #c0c0c0;
+}

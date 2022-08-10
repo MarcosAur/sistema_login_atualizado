@@ -52,17 +52,12 @@
         </tbody>
       </table>
 
-      <div class="pagination">
-        <a href="#"><i class="fas fa-caret-left"></i></a>
-        <p class="p-1 mx-2">01</p>
-        <a href="#" ><i class="fas fa-caret-right"></i></a>
-      </div>
+      {{ $projects->links('vendor.pagination.custom') }}
       @else
         @include('warning', ["msg"=> "Nenhum projeto cadastrado!"])
       @endif
       
     </div>
-
 
 
   </div>
