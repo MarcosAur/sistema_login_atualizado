@@ -30,6 +30,23 @@ class linksController extends Controller
         return redirect()->route('links.create');
     }
 
+    public function filtrarLinks(Request $request){
+        $filterByProjeto = $request->input("filterByProjeto");
+        $filterByCreator = $request->input("filterByCreator");
+        $filterByName = $request->input("filterByName");
+
+        //aplicar filtros 
+        $links = links::where("projeto_id", $filterByProjeto)->where("criador_id", $filterByCreator)->where("nome", "like", "%$filterByName%")->paginate(10);
+        $projects = projetos::all();
+
+
+        //TODO abrir com o filtro aberto
+    
+        //TODO abrir com os campos preenchidos
+        
+        return view('links.index')->with("curTab", "inicio")->with("links", $links)->with("projects", $projects);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

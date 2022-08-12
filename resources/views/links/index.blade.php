@@ -67,15 +67,16 @@
       @if(isset($links) && $links->count() > 0)
       <!-- filtro -->
       <div class="collapse" id="filter">
-        <form class="card card-body m-auto filterCard">
-            <div class="d-flex inputs">
+        <form class="card card-body m-auto filterCard" method="POST" action="{{ route('links.filtrarLinks') }}">
+          @csrf  
+          <div class="d-flex inputs">
                 <div class="d-flex flex-column">
                     <label for="filterByCreator">Filtrar por Criador</label>
                     <input type="text" class="textInput my-2" name="filterByCreator" placeholder="Nome" />
                 </div>
                 <div class="d-flex flex-column">
                     <label for="filterByProject">Filtrar por Project</label>
-                    <select class="textInput my-2" name="cars" id="cars">
+                    <select class="textInput my-2" name="filterByProjeto" id="cars">
                       <option class="select" value="">Selecione um projeto</option>
                       @foreach ($projects as  $project)
                         <option value="{{$project->id}}">{{$project->nome}}</option>

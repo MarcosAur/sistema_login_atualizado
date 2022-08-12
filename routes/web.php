@@ -42,6 +42,7 @@ Route::post('/cadastro',[CadastroController::class,'cadastrar'])->name("users.cr
 
 Route::resource('links', LinksController::class);
 Route::get('/links/delete/{id}',[LinksController::class,'delete'])->name("links.delete");
+Route::post('/links/search',[LinksController::class,'filtrarLinks'])->name("links.filtrarLinks");
 
 Route::resource('project', ProjectController::class);
 
