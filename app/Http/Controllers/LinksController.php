@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\links;
+use App\Models\projetos;
 
 class linksController extends Controller
 {
@@ -17,12 +18,13 @@ class linksController extends Controller
         //se tiver logado vai pro mostrar links
         if(session()->has('userId')){
             $links;
+            $projects = projetos::all();
             if(session()->get("nivelAcesso") == "Comum"){
                 $links = links::where("criador_id", session()->get("userId"))->paginate(10);
             }else{
                 $links = links::paginate(10);
             }
-            return view('links.index')->with("curTab", "inicio")->with("links", $links);
+            return view('links.index')->with("curTab", "inicio")->with("links", $links)->with("projects", $projects);
         }
         //se não tiver vai pro forms de criar link
         return redirect()->route('links.create');

@@ -63,6 +63,7 @@
           <button class="btn-primary d-inline float-end h5" type="button" data-bs-toggle="collapse" data-bs-target="#filter" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-sort-amount-down fa-xs"></i>Filtrar</button>
         @endif
       </h4>
+
       @if(isset($links) && $links->count() > 0)
       <!-- filtro -->
       <div class="collapse" id="filter">
@@ -74,7 +75,12 @@
                 </div>
                 <div class="d-flex flex-column">
                     <label for="filterByProject">Filtrar por Project</label>
-                    <input type="text" class="textInput my-2" name="filterByProjeto" placeholder="Nome" />
+                    <select class="textInput my-2" name="cars" id="cars">
+                      <option class="select" value="">Selecione um projeto</option>
+                      @foreach ($projects as  $project)
+                        <option value="{{$project->id}}">{{$project->nome}}</option>
+                      @endforeach
+                    </select>
                 </div>
                 <div class="d-flex flex-column">
                     <label for="filterByName">Filtrar por Nome</label>
