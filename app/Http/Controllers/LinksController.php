@@ -18,9 +18,9 @@ class linksController extends Controller
         if(session()->has('userId')){
             $links;
             if(session()->get("nivelAcesso") == "Comum"){
-                $links = links::where("criador_id", session()->get("userId"));
+                $links = links::where("criador_id", session()->get("userId"))->paginate(10);
             }else{
-                $links = links::all();
+                $links = links::paginate(10);
             }
             return view('links.index')->with("curTab", "inicio")->with("links", $links);
         }

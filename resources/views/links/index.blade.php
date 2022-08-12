@@ -147,11 +147,7 @@
         </tbody>
       </table>
       
-      <div class="pagination">
-        <a href="#"><i class="fas fa-caret-left"></i></a>
-        <p class="p-1 mx-2">01</p>
-        <a href="#" ><i class="fas fa-caret-right"></i></a>
-      </div>
+      {{ $links->links('vendor.pagination.custom') }}
       @else
       <div class="text-center mx-5">
         @include('warning', ["msg"=> "Nenhum link cadastrado!"])
