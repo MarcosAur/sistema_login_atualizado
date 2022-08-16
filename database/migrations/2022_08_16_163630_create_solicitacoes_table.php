@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('solicitacoes', function (Blueprint $table) {
             $table->id();
             $table->string("assunto");
-            $table->string("criador");
+            $table->foreignId('criador_id')->constrained('usuarios')->onUpdate('cascade')
+            ->onDelete('cascade');
             $table->string("descricao");
             $table->timestamps();
         });

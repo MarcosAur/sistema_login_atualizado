@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LinksController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\CadastroController;
+use App\Http\Controllers\SolicitationController;
 use App\Models\Usuario;
 
 /*
@@ -18,13 +19,12 @@ use App\Models\Usuario;
 |
 */
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
 Route::get('/', function () {
     return redirect()->route('links.index');
 })->name("index");
 
+
+// ROTAS de login
 Route::get('/deslogar', function () {
     session()->forget('userId');
     session()->forget('nivelAcesso');
@@ -34,16 +34,20 @@ Route::get('/deslogar', function () {
 Route::get('/login', [LoginController::class,'index'])->name("login")->middleware("isNotUser");
 
 Route::post('/login', [LoginController::class,'logar'])->name("validarLogin")->middleware("isNotUser");
-
 Route::get('/cadastro',[CadastroController::class,'index'])->name("cadastro");
 // ->middleware("isAdminUser");
 
 Route::post('/cadastro',[CadastroController::class,'cadastrar'])->name("users.create");
 
+// ROTAS de links
 Route::resource('links', LinksController::class);
 Route::get('/links/delete/{id}',[LinksController::class,'delete'])->name("links.delete");
 Route::post('/links/search',[LinksController::class,'filtrarLinks'])->name("links.filtrarLinks");
 
+// ROTAS de solicitações
+Route::resource('solicitation', SolicitationController::class);
+
+// ROTAS de projetos
 Route::resource('project', ProjectController::class);
 
 Route::get('/project/delete/{id}',[ProjectController::class,'delete'])->name("project.delete");
@@ -68,9 +72,6 @@ Route::get("/users/delete/{id}", function ($id) {
     return view("users.delete")->with("user", $user);
 })->name("users.delete");
 
-Route::get("/solicitations", function (){
-    return view("solicitations.index")->with("curTab", "solicitacoes");
-})->name("solicitation.index");
 
 Route::get("/solicitations/create", function (){
     return view("solicitations.create");
