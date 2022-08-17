@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\solicitacoes;
+use App\Http\Requests\solicitationRequest;
 
 
 class SolicitationController extends Controller
@@ -15,7 +16,7 @@ class SolicitationController extends Controller
      */
     public function index()
     {
-        $solicitations = solicitacoes::paginate(9);
+        $solicitations = solicitacoes::paginate(6);
         if(session()->get("nivelAcesso")!="Admin"){
             $solicitations->where("criador_id", session()->get("userId"));
         }
@@ -38,7 +39,7 @@ class SolicitationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(solicitationRequest $request)
     {
         $solicitacao = new solicitacoes;
         $solicitacao->assunto = $request->assunto;

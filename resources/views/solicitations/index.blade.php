@@ -17,8 +17,8 @@
       <h4 class="text-center w-100 pb-5">Solicitações</h4>
 
       @if(isset($solicitations))
-       <div class="solicitationDisplay m-auto">
-        @foreach ($solicitations as $solicitation)  
+       <div class="solicitationDisplay m-auto {{$solicitations->count() > 5 ? 'solicitationDisplayColumn' : ''}}">
+        @foreach ($solicitations as $solicitation) 
           <div class="solicitation shadow bg-body rounded-lg border-0 ">
             <div class="card-header">{{$solicitation->Usuario->nome}}</div>
             <div class="card-body">
@@ -28,9 +28,12 @@
           </div>
         @endforeach
        </div>
+      {{ $solicitations->links('vendor.pagination.custom') }}
        @else
           @if(session()->get("nivelAcesso") != "Admin")
             @include('warning', ["msg"=> "Você não tem nenhuma solicitação cadastrada!"])
+          @else
+            @include('warning', ["msg"=> "Nenhuma solicitação cadastrada!"])
           @endif
         @endif
        @if(session()->get("nivelAcesso") == "Comum" || session()->get("nivelAcesso") == "Observador")

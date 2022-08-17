@@ -352,6 +352,12 @@ input::-webkit-input-placeholder {
 .solicitationDisplay {
     display: flex;
     flex-direction: row;
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+.solicitationDisplayColumn {
+    flex-direction: column;
 }
 @media (max-width: 1180px) {
     .solicitationDisplay {
