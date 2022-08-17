@@ -19,7 +19,7 @@
       @if(isset($solicitations))
        <div class="solicitationDisplay m-auto {{$solicitations->count() > 5 ? 'solicitationDisplayColumn' : ''}}">
         @foreach ($solicitations as $solicitation) 
-          <div class="solicitation shadow bg-body rounded-lg border-0 ">
+          <div class="solicitation shadow bg-body rounded-lg border-0 {{$solicitation->finished ? 'finished': ''}} ">
             <div class="card-header">{{$solicitation->Usuario->nome}}</div>
             <div class="card-body">
               <p class="text-center">{{$solicitation->assunto}}</p>

@@ -12,25 +12,25 @@
 
   <!-- Content -->
   <div class="card shadow m-1 bg-body rounded-lg border-0 d-inline">
-    <p class="card-header text-center modalHeaderSecondary msgsHeader">Nome
+    <p class="card-header text-center modalHeaderSecondary msgsHeader">{{$solicitation->Usuario->nome}}
       @if(session()->get("userId") == "Admin")
         <button class="btnFinalizar btn-primary d-inline float-end">Finalizar Solicitação</button>
       @endif
     </p>
     <div class="text-center py-0 bg-gray">
-      <p>Descrição do problema</p>
+      <p>{{$solicitation->assunto}}</p>
     </div>
     <div class="incomeMessages m-2">
         <div class="msg left">
             <div class="from">
               <i class="fas fa-user fa-xs"></i>
-              Username:
+              {{$solicitation->Usuario->nome}}:
             </div>
             <div class="msgContent">
-              <p class="my-auto">Tive um problema com o acesso da minha outra conta ...</p>
+              <p class="my-auto">{{$solicitation->descricao}}</p>
             </div>
         </div>
-        <div class="msg right">
+        {{-- <div class="msg right">
         <div class="from">
               <i class="fas fa-cog fa-xs"></i>
               Admin:
@@ -38,7 +38,7 @@
             <div class="msgContent">
               <p class="my-auto">Massa</p>
             </div>
-        </div>
+        </div> --}}
     </div>
     <form class="textMsg d-flex">
         <input type="text" class="textInput">

@@ -59,7 +59,8 @@ class SolicitationController extends Controller
      */
     public function show($id)
     {
-        echo $id;
+        $solicitation = solicitacoes::where("id",$id)->get();
+        return view("solicitations.show")->with("solicitation", $solicitation[0]);
     }
 
     /**
