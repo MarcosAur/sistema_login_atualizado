@@ -71,12 +71,3 @@ Route::get("/users/delete/{id}", function ($id) {
     $user = usuario::where("id", $id)->first();
     return view("users.delete")->with("user", $user);
 })->name("users.delete");
-
-
-Route::get("/solicitations/create", function (){
-    return view("solicitations.create");
-})->name("solicitation.create");
-
-Route::get("/solicitations/{id}", function ($id){
-    return view("solicitations.show");
-})->name("solicitation.show");

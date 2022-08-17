@@ -16,9 +16,6 @@
     <p class="my-auto ml-4">Usuário criado com sucesso!</p>
     <button  type="button" data-bs-dismiss="alert"><i class="fas fa-times"></i></button>
   </div> -->
-  @if(session()->has('status'))
-    @include("warning", ["msg" => session()->get("status")])
-  @endif
 
 
   <!-- Content -->

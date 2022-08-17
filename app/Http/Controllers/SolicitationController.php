@@ -15,7 +15,11 @@ class SolicitationController extends Controller
      */
     public function index()
     {
-        return view("solicitations.index")->with("curTab", "solicitacoes");
+        $solicitations = solicitacoes::paginate(9);
+        if(session()->get("nivelAcesso")!="Admin"){
+            $solicitations->where("criador_id", session()->get("userId"));
+        }
+        return view("solicitations.index")->with("curTab", "solicitacoes")->with("solicitations", $solicitations);
     }
 
     /**
@@ -54,7 +58,7 @@ class SolicitationController extends Controller
      */
     public function show($id)
     {
-        //
+        echo $id;
     }
 
     /**

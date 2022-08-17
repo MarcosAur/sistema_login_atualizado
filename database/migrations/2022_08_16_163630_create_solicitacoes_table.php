@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignId('criador_id')->constrained('usuarios')->onUpdate('cascade')
             ->onDelete('cascade');
             $table->string("descricao");
+            $table->boolean("terminado")->default(false);
             $table->timestamps();
         });
     }
