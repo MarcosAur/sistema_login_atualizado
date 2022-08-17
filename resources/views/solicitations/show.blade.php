@@ -15,7 +15,7 @@
     <div class="card-header modalHeaderSecondary">
       <p class="text-center headerItem">{{$solicitation->Usuario->nome}}</p>
       @if(session()->get("nivelAcesso") == "Admin")
-        <a href="" class="btnFinalizar btn btn-primary ml-auto">Finalizar Solicitação</a>
+        <a href="{{route('solicitation.finish', $solicitation->id)}}" class="btnFinalizar btn btn-primary ml-auto">Finalizar Solicitação</a>
       @endif
     </div>
     <div class="text-center py-0 bg-gray">

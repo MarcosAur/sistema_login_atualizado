@@ -74,6 +74,18 @@ class SolicitationController extends Controller
         //
     }
 
+    public function finish(Request $request, $id)
+    {
+        $curSolicitation = solicitacoes::where("id", $id)->first();
+
+        $curSolicitation->terminado = true;
+
+        $curSolicitation->save();
+
+        $request->session()->flash('status', 'Solicitação finalizada com sucesso!');
+        return redirect()->route("solicitation.index");
+    }
+
     /**
      * Update the specified resource in storage.
      *

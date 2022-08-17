@@ -47,6 +47,8 @@ Route::post('/links/search',[LinksController::class,'filtrarLinks'])->name("link
 // ROTAS de solicitações
 Route::resource('solicitation', SolicitationController::class);
 
+Route::get("links/desativa/{id}", [SolicitationController::class, "finish"])->name("solicitation.finish");
+
 // ROTAS de projetos
 Route::resource('project', ProjectController::class);
 
