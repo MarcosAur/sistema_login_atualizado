@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\solicitacoes;
+
 
 class SolicitationController extends Controller
 {
@@ -23,7 +25,7 @@ class SolicitationController extends Controller
      */
     public function create()
     {
-        //
+        return view("solicitations.create");
     }
 
     /**
@@ -34,7 +36,14 @@ class SolicitationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $solicitacao = new solicitacoes;
+        $solicitacao->assunto = $request->assunto;
+        $solicitacao->descricao = $request->descricao;
+        $solicitacao->criador_id = session()->get('userId');
+
+        $solicitacao->save();
+        $request->session()->flash('status', 'Solicitação criada com sucesso!');
+        return redirect()->route("solicitation.index");
     }
 
     /**

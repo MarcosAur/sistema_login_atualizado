@@ -1,6 +1,7 @@
 
 @include("top")
 @include("navBar")
+@include("flashDisplay")
 
 
 <div class="container-fluid content">
