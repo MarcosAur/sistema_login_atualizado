@@ -336,6 +336,21 @@ input::-webkit-input-placeholder {
     width: 100%;
     background-color: #ffc316;
     color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.card-header .headerItem {
+    margin: auto;
+    display: inline-flex;
+    text-align: center;
+    justify-content: center;
+}
+.card-header .btnFinalizar {
+    float: right;
+    padding: 2px 10px;
 }
 
 .solicitation .card-header.finished {

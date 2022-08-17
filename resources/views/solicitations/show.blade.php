@@ -12,11 +12,12 @@
 
   <!-- Content -->
   <div class="card shadow m-1 bg-body rounded-lg border-0 d-inline">
-    <p class="card-header text-center modalHeaderSecondary msgsHeader">{{$solicitation->Usuario->nome}}
-      @if(session()->get("userId") == "Admin")
-        <button class="btnFinalizar btn-primary d-inline float-end">Finalizar Solicitação</button>
+    <div class="card-header modalHeaderSecondary">
+      <p class="text-center headerItem">{{$solicitation->Usuario->nome}}</p>
+      @if(session()->get("nivelAcesso") == "Admin")
+        <a href="" class="btnFinalizar btn btn-primary ml-auto">Finalizar Solicitação</a>
       @endif
-    </p>
+    </div>
     <div class="text-center py-0 bg-gray">
       <p>{{$solicitation->assunto}}</p>
     </div>
