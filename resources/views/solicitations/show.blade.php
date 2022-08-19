@@ -31,6 +31,22 @@
               <p class="my-auto">{{$solicitation->descricao}}</p>
             </div>
         </div>
+        @foreach ($solicitation->messages as $message )
+          <div class="msg {{ $message->enviadoPeloAdmin ? 'right' : 'left' }}">
+            <div class="from">
+              @if($message->enviadoPeloAdmin)
+                <i class="fas fa-cog fa-xs"></i>
+                Admin:
+              @else
+                <i class="fas fa-user fa-xs"></i>
+                {{$solicitation->Usuario->nome}}:
+              @endif
+            </div>
+              <div class="msgContent">
+              <p class="my-auto">{{ $message->msg }}</p>
+            </div>
+          </div>
+        @endforeach
         {{-- <div class="msg right">
         <div class="from">
               <i class="fas fa-cog fa-xs"></i>

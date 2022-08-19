@@ -11,6 +11,10 @@ class solicitacoes extends Model
     
     public function Usuario()
     {
-        return $this->hasOne(Usuario::class,"id" ,"criador_id");
+        return $this->hasOne(Usuario::class, "id", "criador_id");
+    }
+    public function messages()
+    {
+        return $this->hasMany(Mensagem::class, "solicitacao_id", "id");
     }
 }
