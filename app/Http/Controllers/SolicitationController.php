@@ -16,7 +16,7 @@ class SolicitationController extends Controller
      */
     public function index()
     {
-        $solicitations = solicitacoes::paginate(6);
+        $solicitations = solicitacoes::orderBy('terminado')->paginate(6);
         if(session()->get("nivelAcesso")!="Admin"){
             $solicitations->where("criador_id", session()->get("userId"));
         }

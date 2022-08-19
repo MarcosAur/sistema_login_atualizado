@@ -19,12 +19,16 @@
       @if(isset($solicitations))
        <div class="solicitationDisplay m-auto {{$solicitations->count() > 5 ? 'solicitationDisplayColumn' : ''}}">
         @foreach ($solicitations as $solicitation) 
-          <div class="solicitation shadow bg-body rounded-lg border-0 {{$solicitation->finished ? 'finished': ''}} ">
-            <div class="card-header">{{$solicitation->Usuario->nome}}</div>
+          <div class="solicitation shadow bg-body rounded-lg border-0">
+            <div class="card-header {{$solicitation->terminado == 1 ? 'finished' : ''}}">{{$solicitation->Usuario->nome}}</div>
             <div class="card-body">
               <p class="text-center">{{$solicitation->assunto}}</p>
             </div>
-            <a class="btn btn-primary" href="{{route('solicitation.show', $solicitation->id)}}"><i class="fas fa-plus m-auto pr-1"></i>Abrir</a>
+            @if($solicitation->terminado != 1)
+              <a class="btn btn-primary" href="{{route('solicitation.show', $solicitation->id)}}"><i class="fas fa-plus m-auto pr-1"></i>Abrir</a>
+            @else
+              <p class="btn btn-primary finished" href="{{route('solicitation.show', $solicitation->id)}}"><i class="fas fa-plus m-auto pr-1"></i>Encerrado</p>
+            @endif
           </div>
         @endforeach
        </div>

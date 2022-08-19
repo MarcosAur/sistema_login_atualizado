@@ -45,6 +45,11 @@ html,
     flex-direction: row;
     padding: 7px 10px;
 }
+
+.marleft {
+    margin-left: 10px;
+}
+
 .btn-gray {
     background-color: #c0c0c0;
     border: none;
@@ -353,7 +358,7 @@ input::-webkit-input-placeholder {
     padding: 2px 10px;
 }
 
-.solicitation .card-header.finished {
+.solicitation .finished {
     background-color: #c0c0c0;
 }
 
@@ -488,4 +493,10 @@ a.disabled {
 }
 a.disabled:hover {
     color: #c0c0c0;
+}
+.btn:focus,
+.btn:active {
+    outline: none !important;
+    box-shadow: none;
+    background-color: #f26506;
 }
