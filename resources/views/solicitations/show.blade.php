@@ -41,8 +41,10 @@
             </div>
         </div> --}}
     </div>
-    <form class="textMsg d-flex">
-        <input type="text" class="textInput">
+    <form class="textMsg d-flex" method="POST" action='{{route("message.store")}}'>
+      @csrf
+        <input id="invisible_id" name="solicitationId" type="hidden" value="{{$solicitation->id}}">
+        <input type="text" name="msg" placeholder="Escreva sua mensagem..." class="textInput">
         <button type="submit" class="btn-primary my-auto growHover d-inline"><i class="fas fa-paper-plane"></i></button>
     </form>
   </div>

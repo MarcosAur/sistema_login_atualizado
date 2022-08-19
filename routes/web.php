@@ -6,6 +6,7 @@ use App\Http\Controllers\LinksController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\CadastroController;
 use App\Http\Controllers\SolicitationController;
+use App\Http\Controllers\MessageController;
 use App\Models\Usuario;
 
 /*
@@ -48,6 +49,8 @@ Route::post('/links/search',[LinksController::class,'filtrarLinks'])->name("link
 Route::resource('solicitation', SolicitationController::class);
 
 Route::get("links/desativa/{id}", [SolicitationController::class, "finish"])->name("solicitation.finish");
+
+Route::post("mensagem/store", [messageController::class, "store"])->name("message.store");
 
 // ROTAS de projetos
 Route::resource('project', ProjectController::class);
